@@ -23,13 +23,14 @@ function Header() {
             width={150}
             objectFit="contain"
             className="cursor-pointer"
+            alt="logo"
           />
         </div>
 
         <div className="hidden sm:flex items-center h-10 rounded-md flex-grow bg-yellow-400 hover:bg-yellow-500 cursor-pointer">
           <input
             type="text"
-            className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none px-4 "
+            className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none px-4"
           />
           <div className="flex items-center p-3">
             <FiSearch className="h-12  p-0 text-black" />
@@ -60,7 +61,6 @@ function Header() {
         </div>
       </div>
 
-      {/* bottom */}
       <div className="flex items-center bg-amazon_blue-light text-white text-sm space-x-3 p-2 pl-6">
         <p className="link flex items-center">
           <AiOutlineMenu className="h-6 mr-6" />
@@ -68,13 +68,13 @@ function Header() {
         </p>
         <p className="link">Prime Video</p>
         <p className="link">Amazon Business</p>
-        <p className="link">Today's Deals</p>
+        <p className="link">Todays Deals</p>
         <p className="link hidden lg:inline-flex">Electronics</p>
-        <p className="link hidden lg:inline-flex">Food & Grocery</p>
+        <p className="link hidden lg:inline-flex">Food and Grocery</p>
         <p className="link hidden lg:inline-flex">Prime</p>
         <p className="link hidden lg:inline-flex">Buy Again</p>
         <p className="link hidden lg:inline-flex">Shopper Toolkit</p>
-        <p className="link hidden lg:inline-flex">Health & Personal Care</p>
+        <p className="link hidden lg:inline-flex">Health and Personal Care</p>
       </div>
     </header>
   );
