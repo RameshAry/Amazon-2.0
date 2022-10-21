@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { AiFillStar } from "react-icons/ai";
-// import Currency from "react-currency-formatter";
 import { addToBasket } from "../slices/basketSlice";
 import { useDispatch } from "react-redux";
 const MAX_RATING = 5;
@@ -32,7 +31,7 @@ function Product({ id, title, price, description, category, image }) {
       <p className="absolute top-2 right-2 text-xs italic text-gray-400">
         {category}
       </p>
-      <Image src={image} height={200} width={200} objectFit="contain" />
+      <Image src={image} height={200} width={200} objectFit="contain" alt="" />
       <h4 className="my-3">{title}</h4>
       <div className="flex">
         {Array(rating)
@@ -43,12 +42,15 @@ function Product({ id, title, price, description, category, image }) {
       </div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
       <div className="mb-5">
-        {/* <Currency quantity={price} currency="AUD" /> */}
         <p>$ {price}</p>
       </div>
       {hasPrime && (
         <div className="flex items-center space-x-2 -mt-5">
-          <img src="https://links.papareact.com/fdw" alt="" className="w-12" />
+          <img
+            src="https://links.papareact.com/fdw"
+            alt="basket"
+            className="w-12"
+          />
           <p className="text-xs text-gray-500">FREE Next-Day Delivery</p>
         </div>
       )}

@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import CheckoutProduct from "./components/CheckoutProduct";
 import Header from "./components/Header";
 import { selectItems, selectTotal } from "./slices/basketSlice";
-// import Currency from "react-currency-formatter";
 import { useSession } from "next-auth/react";
 
 function Checkout() {

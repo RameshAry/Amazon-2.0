@@ -25,7 +25,7 @@ function Header() {
             className="cursor-pointer"
           />
         </div>
-        {/* Search */}
+
         <div className="hidden sm:flex items-center h-10 rounded-md flex-grow bg-yellow-400 hover:bg-yellow-500 cursor-pointer">
           <input
             type="text"
