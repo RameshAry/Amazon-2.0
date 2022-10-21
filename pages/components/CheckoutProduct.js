@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { AiFillStar } from "react-icons/ai";
-import Currency from "react-currency-formatter";
+// import Currency from "react-currency-formatter";
 import { useDispatch } from "react-redux";
 import { addToBasket, removeFromBasket } from "../slices/basketSlice";
 
@@ -45,7 +45,8 @@ function CheckoutProduct({
             ))}
         </div>
         <p className="text-xs my-2 line-clamp-3">{description}</p>
-        <Currency quantity={price} currency="AUD" />
+        {/* <<Currency quantity={price} currency="AUD" />> */}
+        <p> $ {price}</p>
         {hasPrime && (
           <div className="flex items-center space-x-2 ">
             <img

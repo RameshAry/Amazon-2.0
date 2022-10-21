@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { AiFillStar } from "react-icons/ai";
-import Currency from "react-currency-formatter";
+// import Currency from "react-currency-formatter";
 import { addToBasket } from "../slices/basketSlice";
 import { useDispatch } from "react-redux";
 const MAX_RATING = 5;
@@ -43,7 +43,8 @@ function Product({ id, title, price, description, category, image }) {
       </div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
       <div className="mb-5">
-        <Currency quantity={price} currency="AUD" />
+        {/* <Currency quantity={price} currency="AUD" /> */}
+        <p>$ {price}</p>
       </div>
       {hasPrime && (
         <div className="flex items-center space-x-2 -mt-5">

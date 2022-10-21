@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import CheckoutProduct from "./components/CheckoutProduct";
 import Header from "./components/Header";
 import { selectItems, selectTotal } from "./slices/basketSlice";
-import Currency from "react-currency-formatter";
+// import Currency from "react-currency-formatter";
 import { useSession } from "next-auth/react";
 
 function Checkout() {
@@ -53,7 +53,8 @@ function Checkout() {
                 Subtotal ({items.length}) items :{" "}
                 <span className="font-bold">
                   {" "}
-                  <Currency quantity={total} currency="AUD" />
+                  <p> $ {total}</p>
+                  {/* <Currency quantity={total} currency="AUD" /> */}
                 </span>
               </h2>
               <button
