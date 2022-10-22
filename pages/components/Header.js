@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useSession, signIn, signOut } from "next-auth/react";
@@ -11,6 +11,11 @@ function Header() {
   const { data: session } = useSession();
   const router = useRouter();
   const items = useSelector(selectItems);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+  }, []);
 
   return (
     <header>
@@ -33,7 +38,7 @@ function Header() {
             className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none px-4"
           />
           <div className="flex items-center p-3">
-            <FiSearch className="h-12  p-0 text-black" />
+            {loading && <FiSearch className="h-12  p-0 text-black" />}
           </div>
         </div>
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
@@ -53,7 +58,8 @@ function Header() {
             <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
               {items.length}
             </span>
-            <FiShoppingCart className="h-10 w-8" />
+            {loading && <FiShoppingCart className="h-10 w-8" />}
+
             <p className="hidden md:inline  font-extrabold md:text-sm mt-2 ml-2">
               Basket
             </p>
@@ -62,10 +68,10 @@ function Header() {
       </div>
 
       <div className="flex items-center bg-amazon_blue-light text-white text-sm space-x-3 p-2 pl-6">
-        <p className="link flex items-center">
-          <AiOutlineMenu className="h-6 mr-6" />
+        <di className="link flex items-center">
+          {loading && <AiOutlineMenu className="h-6 mr-6" />}
           All
-        </p>
+        </di>
         <p className="link">Prime Video</p>
         <p className="link">Amazon Business</p>
         <p className="link">Todays Deals</p>

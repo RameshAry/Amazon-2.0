@@ -1,6 +1,6 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
-// import Currency from "react-currency-formatter";
 import { useDispatch } from "react-redux";
 import { addToBasket, removeFromBasket } from "../slices/basketSlice";
 
@@ -14,6 +14,7 @@ function CheckoutProduct({
   rating,
   hasPrime,
 }) {
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const addItemToBasket = () => {
     const product = {
@@ -32,6 +33,10 @@ function CheckoutProduct({
   const removeItemFromBasket = () => {
     dispatch(removeFromBasket({ id }));
   };
+
+  useEffect(() => {
+    setLoading(true);
+  }, []);
   return (
     <div className="grid grid-cols-5 ">
       <Image src={image} height={200} width={200} objectFit="contain" />
@@ -40,9 +45,12 @@ function CheckoutProduct({
         <div className="flex">
           {Array(rating)
             .fill()
-            .map((_, i) => (
-              <AiFillStar key={i} className="h-5 w-5 text-yellow-500" />
-            ))}
+            .map(
+              (_, i) =>
+                loading && (
+                  <AiFillStar key={i} className="h-5 w-5 text-yellow-500" />
+                )
+            )}
         </div>
         <p className="text-xs my-2 line-clamp-3">{description}</p>
         <p> $ {price}</p>
