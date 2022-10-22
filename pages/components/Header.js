@@ -5,7 +5,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import { selectItems } from "../slices/basketSlice";
+import { selectItems } from "../../slices/basketSlice";
 
 function Header() {
   const { data: session } = useSession();

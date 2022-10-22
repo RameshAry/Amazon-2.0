@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
-import { addToBasket } from "../slices/basketSlice";
+import { addToBasket } from "../../slices/basketSlice";
 import { useDispatch } from "react-redux";
 const MAX_RATING = 5;
 const MIN_RATING = 1;
@@ -40,9 +40,12 @@ function Product({ id, title, price, description, category, image }) {
       <div className="flex">
         {Array(rating)
           .fill()
-          .map((_, i) => (loading &&
-            <AiFillStar key={i} className="h-5 w-5 text-yellow-500" />
-          ))}
+          .map(
+            (_, i) =>
+              loading && (
+                <AiFillStar key={i} className="h-5 w-5 text-yellow-500" />
+              )
+          )}
       </div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
       <div className="mb-5">
