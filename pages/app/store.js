@@ -6,4 +6,4 @@ const store = configureStore({
     basket: basketReducer,
   },
 });
-export default store;
+export { store };
