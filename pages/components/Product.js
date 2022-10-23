@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
-// import { addToBasket } from "../slices/basketSlice";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../slices/basketSlice";
 const MAX_RATING = 5;

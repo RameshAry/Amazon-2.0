@@ -9,8 +9,9 @@ const firebaseConfig = {
   appId: "1:632653768655:web:98f4ddb6839c5efe8854ba",
 };
 
-const app = !firebase.apps.length
+const app = !firebase.apps?.length
   ? firebase.initializeApp(firebaseConfig)
   : firebase.app();
+console.log(app);
 
 export default db = app.firestore();
