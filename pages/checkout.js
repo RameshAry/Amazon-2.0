@@ -25,10 +25,6 @@ function Checkout() {
     });
     if (result.error) alert(result.error);
   };
-  // const options = {
-  //   // passing the client secret obtained from the server
-  //   clientSecret: process.env.STRIPE_SECRET_KEY,
-  // };
 
   return (
     <div className="bg-gray-100">

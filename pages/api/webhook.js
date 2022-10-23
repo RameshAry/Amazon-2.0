@@ -3,6 +3,7 @@ import * as admin from "firebase-admin";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const endPointSecret = process.env.STRIPE_SIGNING_SECRET;
 const serviceAccount = require("../../permission.json");
+
 const app = !admin.apps.length
   ? admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
@@ -10,7 +11,6 @@ const app = !admin.apps.length
   : admin.app();
 
 const fulfillOrder = async (session) => {
-  // send data to the database(fire store)
   return app
     .firestore()
     .collection("users")
@@ -27,7 +27,8 @@ const fulfillOrder = async (session) => {
       console.log(
         `SUCCESS: Order ${session.id} has been added to the database`
       );
-    });
+    })
+    .catch((error) => console.log("something went wrong", error));
 };
 
 export default async (req, res) => {
