@@ -21,9 +21,12 @@ function Orders({ orders }) {
         )}
         <div className="mt-5 space-y-4">
           {orders?.map(
-            ({ id, amount, amountShipping, items, timestamp, images }) => (
+            (
+              { id, amount, amountShipping, items, timestamp, images },
+              index
+            ) => (
               <Order
-                key={id}
+                key={id + index}
                 id={id}
                 amount={amount}
                 amountShipping={amountShipping}
