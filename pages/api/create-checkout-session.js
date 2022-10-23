@@ -1,6 +1,4 @@
-const stripe = require("stripe")(
-  "sk_test_51KitRBHq9wU42jJqog1aYSpgBCp0FGcKEFvCqq0cai3xSwSWNGz6Gu3RQeKHzmTC5NK7Nz0k7QmZcryQsUt2xV8g00q5w7fUDg"
-);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 export default async (req, res) => {
   const { items, email } = req.body;
 

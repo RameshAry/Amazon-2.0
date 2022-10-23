@@ -4,6 +4,7 @@ import { AiFillStar } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { addToBasket, removeFromBasket } from "../../slices/basketSlice";
 
+
 function CheckoutProduct({
   id,
   title,

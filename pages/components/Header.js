@@ -47,7 +47,7 @@ function Header() {
             <p className="font-extrabold md:text-sm">Account & List</p>
           </div>
 
-          <div className="link">
+          <div onClick={() => router.push("/orders")} className="link">
             <p>Returns</p>
             <p className="font-extrabold md:text-sm">& Orders</p>
           </div>
@@ -68,10 +68,10 @@ function Header() {
       </div>
 
       <div className="flex items-center bg-amazon_blue-light text-white text-sm space-x-3 p-2 pl-6">
-        <di className="link flex items-center">
+        <div className="link flex items-center">
           {loading && <AiOutlineMenu className="h-6 mr-6" />}
           All
-        </di>
+        </div>
         <p className="link">Prime Video</p>
         <p className="link">Amazon Business</p>
         <p className="link">Todays Deals</p>
