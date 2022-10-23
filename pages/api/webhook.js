@@ -2,7 +2,7 @@ import { buffer } from "micro";
 import * as admin from "firebase-admin";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const endPointSecret = process.env.STRIPE_SIGNING_SECRET;
-const serviceAccount = require("../../../permissions.json");
+const serviceAccount = require("../../permission.json");
 const app = !admin.apps.length
   ? admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
